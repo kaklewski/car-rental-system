@@ -1,3 +1,4 @@
+import Errors from '../constants/Errors';
 import Car from '../models/Car';
 import Reservation from '../models/Reservation';
 import type { CarType } from '../types/CarType';
@@ -30,7 +31,7 @@ class CarRentalSystem {
             });
 
         if (!availableCar) {
-            throw new Error(`The car is not available for the selected dates`);
+            throw new Error(Errors.CAR_NOT_AVAILABLE);
         }
 
         const reservation = new Reservation(availableCar, startDate, days);

@@ -1,3 +1,4 @@
+import Errors from '../constants/Errors';
 import type Car from './Car';
 
 class Reservation {
@@ -8,7 +9,7 @@ class Reservation {
 
     constructor(carType: Car, startDate: Date, days: number) {
         if (days < 1) {
-            throw new Error('Reservation must be for at least 1 day');
+            throw new Error(Errors.INVALID_RESERVATION_DAYS);
         }
 
         this.carType = carType;
