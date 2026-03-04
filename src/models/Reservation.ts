@@ -17,6 +17,10 @@ class Reservation {
 
         this.endDate = new Date(startDate.getTime() + days * 24 * 60 * 60 * 1000);
     }
+
+    conflictsWithOtherDate(otherDateStart: Date, otherDateEnd: Date): boolean {
+        return this.startDate < otherDateEnd && this.endDate > otherDateStart;
+    }
 }
 
 export default Reservation;
