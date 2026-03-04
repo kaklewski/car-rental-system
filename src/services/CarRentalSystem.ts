@@ -1,12 +1,12 @@
-import Car from './models/Car';
-import Reservation from './models/Reservation';
-import type { CarType } from './types/CarType';
+import Car from '../models/Car';
+import Reservation from '../models/Reservation';
+import type { CarType } from '../types/CarType';
 
 class CarRentalSystem {
     cars: Car[] = [];
     reservations: Reservation[] = [];
 
-    constructor(initialCarStock: { sedan: number; suv: number; van: number }) {
+    constructor(initialCarStock: Record<CarType, number>) {
         Object.entries(initialCarStock).forEach(([type, count]) => {
             for (let i = 1; i <= count; i++) {
                 this.cars.push(new Car(`${type}-${i}`, type as CarType));

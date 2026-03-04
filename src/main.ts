@@ -1,4 +1,4 @@
-import CarRentalSystem from './CarRentalSystem';
+import CarRentalSystem from './services/CarRentalSystem';
 
 // Please design and implement a simulated Car Rental system using object-oriented principles.
 
