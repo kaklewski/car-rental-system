@@ -1,4 +1,4 @@
-type CarType = 'sedan' | 'suv' | 'van';
+import type { CarType } from "../types/CarType";
 
 class Car {
     id: string;
